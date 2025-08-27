@@ -25,10 +25,11 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { Search } from "../Search";
+import { Search } from "../components/Search";
 import { CiMenuBurger } from "react-icons/ci";
-import { ShopDropdown } from "../DropDownMenu";
-import Banner from "../Banner";
+import { ShopDropdown } from "../components/DropDownMenu";
+import Banner from "../components/Banner";
+import Header from "./Header";
 const userItems = [
   { id: 1, icon: <CgProfile /> },
   { id: 2, icon: <FaRegHeart /> },
@@ -69,7 +70,7 @@ export function NavLink({
     <Link
       href={href}
       className={clsx(
-        " py-2 rounded-md transition-colors font-medium hover:text-[var(--theme-text-color)] duration-150 ease-in-out",
+        " py-2 rounded-md transition-colors font-medium text-[16px] hover:text-[var(--theme-text-color)] duration-150 ease-in-out",
         isActive && " text-[var(--theme-text-color)] ",
         className
       )}
@@ -132,7 +133,7 @@ export function Navbar() {
         id="navbar"
       >
         {/* Logo */}
-        <div className="flex items-center justify-between  py-4 mb-5 custom-container text-[var(--secondary-text-color)] ">
+        <div className="flex items-center justify-between  py-4 md:py-8  custom-container text-[var(--secondary-text-color)] ">
           <div className="flex gap-10 lg:gap-5">
             {" "}
             <Link href="/" className="text-xl font-bold">
@@ -172,7 +173,7 @@ export function Navbar() {
                 {/* Components */}
 
                 <NavigationMenuItem className="hover:text-[var(--theme-text-color)] ">
-                  <NavigationMenuTrigger className="">
+                  <NavigationMenuTrigger className="text-[16px]">
                     Shop
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="border-none ">
@@ -229,7 +230,10 @@ export function Navbar() {
                   <CiMenuBurger />
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className="p-4 bg-white">
+              <SheetContent
+                side="left"
+                className="p-4 bg-white overflow-y-auto"
+              >
                 <nav className="flex flex-col gap-4">
                   <SheetTitle>
                     <Link href="/" className="text-xl font-bold">
@@ -263,6 +267,8 @@ export function Navbar() {
                     ))}
                   </div>
                 </nav>
+                <hr className="border-t border-gray-400 my-10" />
+                <Header flexCol={true} />
               </SheetContent>
             </Sheet>
           </div>
