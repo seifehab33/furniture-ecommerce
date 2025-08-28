@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
-import { MdArrowRightAlt, MdOutlineArrowRightAlt } from "react-icons/md";
 import offer1 from "@/assets/offers-image-1.webp";
 import offer2 from "@/assets/offers-image-2.webp";
 import offer3 from "@/assets/offers-image-3.webp";
@@ -31,7 +30,7 @@ const offers = [
 ];
 function SpecialOffers() {
   return (
-    <div className="custom-container flex-col">
+    <div className="custom-container flex-col ">
       <div className="flex items-center justify-between w-full">
         <div>
           <h1 className="font-bold text-4xl mb-2">Special Offers</h1>
@@ -43,7 +42,7 @@ function SpecialOffers() {
           Sell All <GoArrowRight />
         </Button>
       </div>
-      <div className="flex gap-3 mt-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-10 text-white">
         {offers.map((offer) => (
           <div
             key={offer.id}
@@ -60,7 +59,9 @@ function SpecialOffers() {
             <div className="flex flex-col gap-5">
               <h1 className="font-bold">{offer.title}</h1>
               <p className="text-sm">{offer.desc}</p>
-              <Button className="bg-white rounded-xl">Browse Now</Button>
+              <Button className="bg-white rounded-xl text-gray-500">
+                Browse Now
+              </Button>
             </div>
           </div>
         ))}

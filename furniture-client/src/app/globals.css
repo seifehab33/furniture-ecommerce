@@ -7,6 +7,7 @@
     /*  */
     --theme-text-color: #456a6d;
     --secondary-text-color: #595757;
+    --footer-color: #eef4f5;
   }
   .dark {
     --background: 0 0% 3.9%;

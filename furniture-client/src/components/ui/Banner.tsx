@@ -10,7 +10,7 @@ const socailMedia = [
 function Banner() {
   return (
     <div className="w-full bg-[var(--theme-text-color)]">
-      <div className="custom-container py-3 *:flex *:items-center *:gap-5 *:text-sm *:text-gray-100 *:cursor-pointer">
+      <div className="custom-container py-3 *:flex *:items-center *:gap-5 *:text-xs *:text-gray-100 *:cursor-pointer">
         <div>
           <h1>Showrooms</h1>
           <h1>Custom Work</h1>

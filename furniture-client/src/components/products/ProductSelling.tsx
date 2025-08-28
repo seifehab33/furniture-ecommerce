@@ -1,10 +1,9 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { FaRegHeart } from "react-icons/fa";
 import { MdCompareArrows, MdRemoveRedEye } from "react-icons/md";
-import gsap from "gsap";
 
 interface Products {
   id: number;
@@ -25,38 +24,8 @@ function ProductSelling({
   heading,
   description,
 }: ProductsSellingState) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const heading = containerRef.current.querySelector(".heading");
-      const items = containerRef.current.querySelectorAll(".product-card");
-
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-      // Animate heading
-      tl.from(heading, {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-      });
-
-      // Animate product cards staggered
-      tl.from(
-        items,
-        {
-          opacity: 0,
-          y: 40,
-          duration: 0.8,
-          stagger: 0.2,
-        },
-        "-=0.4" // overlap with heading
-      );
-    }
-  }, [products]);
-
   return (
-    <div ref={containerRef} className="custom-container flex flex-col my-14">
+    <div className="custom-container flex flex-col my-14">
       {/* Heading */}
       <div className="heading flex flex-col justify-center items-center gap-2">
         <h1 className="font-bold text-3xl">{heading}</h1>

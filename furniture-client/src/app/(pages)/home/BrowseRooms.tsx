@@ -1,46 +1,16 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import browseImg from "@/assets/browse-by-rooms-image-1-1.webp";
 import broImg2 from "@/assets/browse-by-rooms-image-2-1.webp";
 import broImg3 from "@/assets/browse-by-rooms-image-3.webp";
 import broImg4 from "@/assets/browse-by-rooms-image-4-1.webp";
 import ProductCard from "@/components/products/ProductCard";
-import gsap from "gsap";
 
 const lastProducts = [broImg3, broImg4];
 
 function BrowseRooms() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      // Animate heading
-      const heading = containerRef.current.querySelectorAll(".heading-animate");
-      gsap.from(heading, {
-        opacity: 0,
-        y: -50,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
-
-      // Animate cards
-      const cards = containerRef.current.querySelectorAll(".card-animate");
-      gsap.from(cards, {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
-    }
-  }, []);
-
   return (
-    <div
-      ref={containerRef}
-      className="bg-[var(--theme-text-color)] custom-container grid grid-cols-1 md:grid-cols-2 gap-6 p-6 text-white rounded-xl"
-    >
+    <div className="bg-[var(--theme-text-color)] custom-container grid grid-cols-1 md:grid-cols-2 gap-6 p-6 text-white rounded-xl">
       {/* Left side */}
       <div className="left-side flex flex-col gap-6">
         <div className="heading-animate">

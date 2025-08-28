@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Banner from "@/components/Banner";
+import Banner from "@/components/ui/Banner";
 import { Navbar } from "@/layout/Navbar";
 import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,8 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}  `}>
         <Navbar />
         <Header />
-        <div className="bg-[#fbfcfc] min-h-screen py-10">{children}</div>
+        <div className="bg-[#fbfcfc] min-h-screen pt-10">{children}</div>
+        <Footer />
       </body>
     </html>
   );

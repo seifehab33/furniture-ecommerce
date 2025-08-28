@@ -4,6 +4,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, Search } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type IconProps = React.SVGProps<SVGSVGElement>;
 
@@ -13,7 +15,6 @@ export function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState<boolean | undefined>(
     undefined
   );
-
   React.useEffect(() => {
     const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
     const onChange = () => {
@@ -47,6 +48,10 @@ const ICONS = {
 
 export function NotFound() {
   const isMobile = useIsMobile();
+  const router = useRouter();
+  const handleBack = () => {
+    router.back();
+  };
   return (
     <div className="h-screen w-full flex items-center justify-center  gap-10 px-4  md:px-20">
       <div className="absolute hidden md:flex inset-0 items-center justify-center text-secondary py-24 px-20">
@@ -79,15 +84,18 @@ export function NotFound() {
             className="w-full md:w-fit"
             size={isMobile ? "default" : "lg"}
             variant="outline"
+            onClick={handleBack}
           >
             <ArrowLeft className="size-4" /> Go back
           </Button>
-          <Button
-            className="w-full md:w-fit"
-            size={isMobile ? "default" : "lg"}
-          >
-            Go Home
-          </Button>
+          <Link href="/">
+            <Button
+              className="w-full md:w-fit"
+              size={isMobile ? "default" : "lg"}
+            >
+              Go Home
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

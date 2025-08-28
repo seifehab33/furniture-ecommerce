@@ -29,7 +29,7 @@ export function Search({
         placeholder={placeholder}
         value={query}
         onChange={handleChange}
-        className="pl-9 rounded-full "
+        className="pl-9 rounded-full border-gray-300 border-2 py-3"
       />
     </div>
   );

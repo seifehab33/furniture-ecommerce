@@ -52,7 +52,7 @@ function Header({ flexCol }: { flexCol?: boolean }) {
             <Link
               key={item.id}
               href={item.href}
-              className="flex items-center gap-2 hover:text-[var(--theme-text-color)]"
+              className="flex items-center gap-2 text-sm hover:text-[var(--theme-text-color)]"
             >
               <span className="text-xl">{item.icon}</span>
               {item.title}

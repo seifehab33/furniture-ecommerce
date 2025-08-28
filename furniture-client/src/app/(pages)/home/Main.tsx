@@ -19,7 +19,7 @@ function Main() {
             <p className="md:text-4xl  font-bold text-black my-5 leading-snug lg:text-6xl text-center lg:text-start">
               Exquisite design combined with functionalities
             </p>
-            <p className="w-full md:text-center">
+            <p className="w-full text-center lg:text-start">
               Pellentesque ullamcorper dignissim condimentum volutpat consequat
               mauris nunc lacinia quis.
             </p>
@@ -63,7 +63,7 @@ function Main() {
               <p className="font-bold">WoodenChair</p>
               <p>$199</p>
             </div>
-            <Link href={"/shop/woodenchair"}>
+            <Link href={"/shop"}>
               <div className="bg-white absolute bottom-5 text-xl px-7 py-4 flex justify-center items-center left-3 rounded-xl hover:bg-[var(--theme-text-color)] hover:text-white cursor-pointer transition-colors ease-in-out duration-150">
                 <FaArrowRightLong />
               </div>
@@ -82,7 +82,7 @@ function Main() {
                 <p className="font-bold">Pretium Elite</p>
                 <p>$130</p>
               </div>
-              <Link href="/shop/pretiumelite">
+              <Link href="/shop">
                 <div className="bg-white absolute bottom-5 text-xl px-7 py-4 flex justify-center items-center left-3 rounded-xl hover:bg-[var(--theme-text-color)] hover:text-white cursor-pointer transition-colors ease-in-out duration-150">
                   <FaArrowRightLong />
                 </div>

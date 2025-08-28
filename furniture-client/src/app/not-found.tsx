@@ -1,4 +1,4 @@
-import { NotFound } from "@/components/not-found";
+import { NotFound } from "@/components/ui/not-found";
 import React from "react";
 
 function Page() {

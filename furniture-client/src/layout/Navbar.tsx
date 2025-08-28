@@ -25,10 +25,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { Search } from "../components/Search";
+import { Search } from "../components/ui/Search";
 import { CiMenuBurger } from "react-icons/ci";
-import { ShopDropdown } from "../components/DropDownMenu";
-import Banner from "../components/Banner";
+import { ShopDropdown } from "../components/ui/DropDownMenu";
+import Banner from "../components/ui/Banner";
 import Header from "./Header";
 const userItems = [
   { id: 1, icon: <CgProfile /> },
@@ -134,13 +134,13 @@ export function Navbar() {
       >
         {/* Logo */}
         <div className="flex items-center justify-between  py-4 md:py-8  custom-container text-[var(--secondary-text-color)] ">
-          <div className="flex gap-10 lg:gap-5">
+          <div className="flex gap-10 lg:gap-5 items-center">
             {" "}
-            <Link href="/" className="text-xl font-bold">
+            <Link href="/" className=" font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 117 25"
-                className="default-logo h-8"
+                className="default-logo h-7"
                 aria-label="Furniture"
                 role="img"
               >
@@ -173,7 +173,7 @@ export function Navbar() {
                 {/* Components */}
 
                 <NavigationMenuItem className="hover:text-[var(--theme-text-color)] ">
-                  <NavigationMenuTrigger className="text-[16px]">
+                  <NavigationMenuTrigger className="text-[14px]">
                     Shop
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="border-none ">
@@ -212,7 +212,7 @@ export function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <div className="flex items-center gap-5 lg:gap-2">
+            <div className="flex items-center gap-5 lg:gap-5">
               {userItems.map((user) => (
                 <span
                   key={user.id}
