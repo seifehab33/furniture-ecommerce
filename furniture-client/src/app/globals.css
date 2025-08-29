@@ -8,6 +8,60 @@
     --theme-text-color: #456a6d;
     --secondary-text-color: #595757;
     --footer-color: #eef4f5;
+    --background: 0 0% 100%;
+    --foreground: 220 8% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 8% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 8% 15%;
+
+    --primary: 220 8% 15%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 8% 96%;
+    --secondary-foreground: 220 8% 15%;
+
+    --muted: 220 8% 96%;
+    --muted-foreground: 220 8% 45%;
+
+    --accent: 220 8% 92%;
+    --accent-foreground: 220 8% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 8% 88%;
+    --input: 220 8% 88%;
+    --ring: 220 8% 15%;
+
+    /* Custom design tokens */
+    --filter-background: 0 0% 99%;
+    --filter-border: 220 8% 92%;
+    --filter-title: 220 8% 20%;
+    --filter-value: 220 8% 35%;
+    --slider-track: 220 8% 92%;
+    --slider-range: 220 8% 15%;
+    --slider-thumb: 0 0% 100%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
     --background: 0 0% 3.9%;

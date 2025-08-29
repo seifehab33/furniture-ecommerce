@@ -2,7 +2,7 @@ import SubscribeForm from "@/components/ui/SubscribeForm";
 import Link from "next/link";
 import React from "react";
 import { FaBehanceSquare, FaFacebook, FaLinkedin } from "react-icons/fa";
-import { FaS, FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
+import { FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { LuClock4 } from "react-icons/lu";

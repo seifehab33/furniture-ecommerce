@@ -173,9 +173,11 @@ export function Navbar() {
                 {/* Components */}
 
                 <NavigationMenuItem className="hover:text-[var(--theme-text-color)] ">
-                  <NavigationMenuTrigger className="text-[14px]">
-                    Shop
-                  </NavigationMenuTrigger>
+                  <Link href={"/shop"}>
+                    <NavigationMenuTrigger className="text-[14px]">
+                      Shop
+                    </NavigationMenuTrigger>
+                  </Link>
                   <NavigationMenuContent className="border-none ">
                     <ul className="flex flex-col text-sm   bg-black ">
                       {components.map((component) => (
@@ -202,6 +204,14 @@ export function Navbar() {
                 </NavigationMenuItem>
 
                 {/* With icons */}
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    asChild
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    <NavLink href="/contact-us">Contact Us</NavLink>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     asChild

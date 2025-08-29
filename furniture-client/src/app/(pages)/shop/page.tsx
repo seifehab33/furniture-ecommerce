@@ -1,12 +1,12 @@
 "use client";
-
-import Link from "next/link";
+import heroShopImg from "@/assets/shop-hero-image.webp";
+import ShopLayout from "./ShopLayout";
 
 const Shop: React.FC = () => {
   return (
-    <div>
-      Shop <Link href="/jack">Jac</Link>
-    </div>
+    <>
+      <ShopLayout title="Shop" headerImage={heroShopImg} />
+    </>
   );
 };
 export default Shop;
