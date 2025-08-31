@@ -2,8 +2,12 @@ import React from "react";
 
 const colors = [
   { id: 1, color: "Beige", counts: 5 },
-  { id: 2, color: "Blue", counts: "1" },
-  { id: 3, color: "Gray", counts: "3" },
+  { id: 2, color: "Blue", counts: 1 },
+  { id: 3, color: "Gray", counts: 3 },
+  { id: 4, color: "Green", counts: 4 },
+  { id: 5, color: "Red", counts: 2 },
+  { id: 6, color: "Yellow", counts: 7 },
+  { id: 7, color: "Purple", counts: 6 },
 ];
 
 function ColorFilter() {

@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import Image, { StaticImageData } from "next/image";
 import {
   Breadcrumb,
@@ -19,6 +19,8 @@ import cat5 from "@/assets/decor-category-hero-image.webp";
 import cat6 from "@/assets/tables-category-hero-image.webp";
 import PriceFilter from "@/components/filter/PriceSlider";
 import ColorFilter from "@/components/filter/ColorFilter";
+import CatMat from "@/components/filter/CatMat";
+import Brand from "@/components/filter/Brand";
 const categories = [
   { id: 1, title: "Armcharis", img: cat1, products: 5 },
   { id: 2, title: "Chairs", img: cat2, products: 6 },
@@ -26,6 +28,21 @@ const categories = [
   { id: 4, title: "Sofas", img: cat4, products: 6 },
   { id: 5, title: "Decor", img: cat5, products: 8 },
   { id: 6, title: "Tables", img: cat6, products: 5 },
+];
+const filterCategories = [
+  { id: 1, title: "Armcharis", counts: 5 },
+  { id: 2, title: "Chairs", counts: 6 },
+  { id: 3, title: "Storage", counts: 6 },
+  { id: 4, title: "Sofas", counts: 6 },
+  { id: 5, title: "Decor", counts: 8 },
+  { id: 6, title: "Tables", counts: 5 },
+];
+const materials = [
+  { id: 1, title: "Cotton", counts: 12 },
+  { id: 2, title: "Wool", counts: 7 },
+  { id: 3, title: "Silk", counts: 5 },
+  { id: 4, title: "Polyester", counts: 9 },
+  { id: 5, title: "Leather", counts: 4 },
 ];
 type ShopLayoutProps = {
   title: string;
@@ -56,7 +73,10 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
                   {/* Home always first */}
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link href="/" className="flex items-center">
+                      <Link
+                        href="/"
+                        className="flex items-center text-gray-300"
+                      >
                         <BiHome className="inline-block w-4 h-4 mr-1" />
                         <p>Home</p>
                       </Link>
@@ -70,18 +90,18 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
                     return (
                       <React.Fragment key={href}>
                         <BreadcrumbSeparator className="mt-1" />
-                        <BreadcrumbItem className="font-medium">
+                        <BreadcrumbItem className="font-medium ">
                           {!isLast ? (
                             <BreadcrumbLink asChild>
                               <Link
                                 href={{ pathname: href }}
-                                className="capitalize font-medium"
+                                className="capitalize font-medium text-gray-300"
                               >
                                 {part}
                               </Link>
                             </BreadcrumbLink>
                           ) : (
-                            <BreadcrumbPage className="capitalize font-medium">
+                            <BreadcrumbPage className="capitalize font-medium text-gray-300">
                               {part}
                             </BreadcrumbPage>
                           )}
@@ -95,7 +115,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
           </div>
         </div>
       </div>
-      <div className="custom-container my-14 flex-col">
+      <div className="custom-container mt-14 flex-col">
         <div className="categories flex items-center gap-4 w-full justify-between">
           {categories.map((category) => (
             <div
@@ -120,9 +140,12 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
         </div>
         <div className="">
           <div className="left-side max-w-sm">
-            <div className="mt-10">
+            <div className="mt-10 text-sm">
               <PriceFilter />
+              <CatMat title="Filter by Category" items={filterCategories} />
               <ColorFilter />
+              <CatMat title="Filter by Material" items={materials} />
+              <Brand />
             </div>
           </div>
           <div className="right-side"></div>

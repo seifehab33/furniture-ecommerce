@@ -127,3 +127,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #6b7280; /* hover color (gray-500) */
 }
+input[type="checkbox"] {
+  accent-color: var(--theme-text-color);
+}

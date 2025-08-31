@@ -209,7 +209,7 @@ export function Navbar() {
                     asChild
                     className={navigationMenuTriggerStyle()}
                   >
-                    <NavLink href="/contact-us">Contact Us</NavLink>
+                    <NavLink href="/about-us">About Us</NavLink>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
