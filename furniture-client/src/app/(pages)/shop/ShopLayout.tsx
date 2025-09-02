@@ -43,8 +43,9 @@ import {
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { FaXmark } from "react-icons/fa6";
+import { UrlObject } from "url";
 export const categories = [
-  { id: 1, title: "Armcharis", img: cat1, products: 5 },
+  { id: 1, title: "Armchairs", img: cat1, products: 5 },
   { id: 2, title: "Chairs", img: cat2, products: 6 },
   { id: 3, title: "Storage", img: cat3, products: 6 },
   { id: 4, title: "Sofas", img: cat4, products: 6 },
@@ -52,7 +53,7 @@ export const categories = [
   { id: 6, title: "Tables", img: cat6, products: 5 },
 ];
 const filterCategories = [
-  { id: 1, title: "Armcharis", counts: 5 },
+  { id: 1, title: "Armchairs", counts: 5 },
   { id: 2, title: "Chairs", counts: 6 },
   { id: 3, title: "Storage", counts: 6 },
   { id: 4, title: "Sofas", counts: 6 },
@@ -66,6 +67,7 @@ const materials = [
   { id: 4, title: "Polyester", counts: 9 },
   { id: 5, title: "Leather", counts: 4 },
 ];
+
 type ShopLayoutProps = {
   title: string;
   headerImage: string | StaticImageData;
@@ -107,6 +109,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
     router.push(`?${newParams.toString()}`, { scroll: false });
     setPriceRange([newMin, newMax]);
   };
+
   const resetFilter = () => {
     const newParams = new URLSearchParams(searchParams.toString());
     newParams.delete("min");
@@ -191,7 +194,11 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
               className="flex items-center justify-between gap-4"
             >
               <div className="group w-16 h-16 rounded-full overflow-hidden">
-                <Link href={`/shop/category/${category.title}`}>
+                <Link
+                  href={{
+                    pathname: `/shop/category/${category.title}`,
+                  }}
+                >
                   <Image
                     src={category.img}
                     alt="category"
