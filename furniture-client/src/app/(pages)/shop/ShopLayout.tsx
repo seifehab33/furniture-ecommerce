@@ -43,7 +43,6 @@ import {
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { FaXmark } from "react-icons/fa6";
-import { UrlObject } from "url";
 export const categories = [
   { id: 1, title: "Armchairs", img: cat1, products: 5 },
   { id: 2, title: "Chairs", img: cat2, products: 6 },
@@ -121,6 +120,14 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
     const newParams = new URLSearchParams(searchParams.toString());
     newParams.set("page", String(newPage));
     router.push(`?${newParams.toString()}`, { scroll: false });
+  };
+  const handleNextPage = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (currentPage < totalPages) handlePageChange(currentPage + 1);
+  };
+  const handlePreviousPage = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (currentPage > 1) handlePageChange(currentPage - 1);
   };
   const isFiltered = min !== defaultMin || max !== defaultMax;
   return (
@@ -292,10 +299,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
                 <PaginationItem>
                   <PaginationPrevious
                     href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (currentPage > 1) handlePageChange(currentPage - 1);
-                    }}
+                    onClick={handlePreviousPage}
                     className={
                       currentPage === 1 ? "pointer-events-none opacity-50" : ""
                     }
@@ -324,11 +328,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
                 <PaginationItem>
                   <PaginationNext
                     href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (currentPage < totalPages)
-                        handlePageChange(currentPage + 1);
-                    }}
+                    onClick={handleNextPage}
                     className={
                       currentPage === totalPages
                         ? "pointer-events-none opacity-50"
