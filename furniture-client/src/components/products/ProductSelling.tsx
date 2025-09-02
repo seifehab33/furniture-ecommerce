@@ -15,8 +15,8 @@ interface Products {
 
 type ProductsSellingState = {
   products: Products[];
-  heading: string;
-  description: string;
+  heading?: string;
+  description?: string;
 };
 
 function ProductSelling({
@@ -74,7 +74,7 @@ function ProductSelling({
                 </span>
                 <div className="bg-gray-400 w-[0.2px] h-6"></div>
                 <Link
-                  href={""}
+                  href={"/"}
                   className="text-[var(--theme-text-color)] font-bold"
                 >
                   Add to cart

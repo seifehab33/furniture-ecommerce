@@ -4,7 +4,7 @@ import browseImg from "@/assets/browse-by-rooms-image-1-1.webp";
 import broImg2 from "@/assets/browse-by-rooms-image-2-1.webp";
 import broImg3 from "@/assets/browse-by-rooms-image-3.webp";
 import broImg4 from "@/assets/browse-by-rooms-image-4-1.webp";
-import ProductCard from "@/components/products/ProductCard";
+import ProductCard from "@/components/products/RoomCard";
 
 const lastProducts = [broImg3, broImg4];
 

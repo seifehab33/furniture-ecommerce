@@ -8,8 +8,8 @@
     --theme-text-color: #456a6d;
     --secondary-text-color: #595757;
     --footer-color: #eef4f5;
-    --background: 0 0% 100%;
-    --foreground: 220 8% 15%;
+    --background: #ffffff; /* light mode background */
+    --foreground: #111827; /* text color / dark text */
 
     --card: 0 0% 100%;
     --card-foreground: 220 8% 15%;

@@ -5,6 +5,7 @@ import Banner from "@/components/ui/Banner";
 import { Navbar } from "@/layout/Navbar";
 import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}  `}>
-        <Navbar />
-        <Header />
-        <div className="bg-[#fbfcfc] min-h-screen pt-10">{children}</div>
-        <Footer />
+        <TooltipProvider>
+          <Navbar />
+          <Header />
+          <div className="bg-[#fbfcfc] min-h-screen pt-10">{children}</div>
+          <Footer />
+        </TooltipProvider>
       </body>
     </html>
   );
