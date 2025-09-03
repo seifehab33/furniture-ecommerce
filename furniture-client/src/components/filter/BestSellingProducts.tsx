@@ -22,8 +22,8 @@ const formatPrice = (price: number | undefined): string | number => {
 function BestSellingProducts() {
   return (
     <div className="mt-10">
-      <h1 className="font-bold">Best Selling Products</h1>
-      <div className="mt-4">
+      <h1 className="font-bold text-[16px]">Best Selling Products</h1>
+      <div className="mt-4 flex flex-col gap-2">
         {products.map((product) => (
           <div key={product.id} className="flex items-center gap-4">
             <div>

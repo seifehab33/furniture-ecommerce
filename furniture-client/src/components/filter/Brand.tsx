@@ -22,7 +22,7 @@ const brands = [
 function Brand() {
   return (
     <div className="mt-10">
-      <h1 className="mb-4 font-bold">Filter by brand</h1>
+      <h1 className="mb-4 font-bold text-[16px]">Filter by brand</h1>
       <div className="grid grid-cols-4 gap-4">
         {brands.map((brand) => (
           <Tooltip key={brand.id}>

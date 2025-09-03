@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Slider } from "@/components/ui/slider";
+import { debounce } from "@/lib/debouce";
 
 interface PriceFilterProps {
   min?: number;
   max?: number;
-  value: [number, number]; // always controlled
+  value: [number, number]; // controlled from parent
   onValueChange: (value: [number, number]) => void;
 }
 
@@ -14,8 +15,24 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
   value,
   onValueChange,
 }) => {
+  // local state for smooth UI updates
+  const [internalValue, setInternalValue] = useState<[number, number]>(value);
+
+  // update local state if parent changes
+  useEffect(() => {
+    setInternalValue(value);
+  }, [value]);
+
+  // debounced callback
+  const debouncedOnValueChange = React.useMemo(
+    () => debounce(onValueChange, 300),
+    [onValueChange]
+  );
+
   const handleValueChange = (newValue: number[]) => {
-    onValueChange([newValue[0], newValue[1]]);
+    const tupleValue: [number, number] = [newValue[0], newValue[1]];
+    setInternalValue(tupleValue);
+    debouncedOnValueChange(tupleValue);
   };
 
   const formatPrice = (price: number) =>
@@ -28,13 +45,13 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
 
   return (
     <div className="w-full bg-filter-background rounded-lg">
-      <h3 className="text-base font-bold text-filter-title mb-6">
+      <h3 className="text-[16px] font-bold text-filter-title mb-6">
         Filter by price
       </h3>
 
       <div className="space-y-6">
         <Slider
-          value={value}
+          value={internalValue}
           onValueChange={handleValueChange}
           max={max}
           min={min}
@@ -42,7 +59,8 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
           className="w-full"
         />
         <div className="text-sm text-filter-value">
-          Price: {formatPrice(value[0])} - {formatPrice(value[1])}
+          Price: {formatPrice(internalValue[0])} -{" "}
+          {formatPrice(internalValue[1])}
         </div>
       </div>
     </div>

@@ -29,7 +29,6 @@ const Page: React.FC<CatProps> = ({ params }) => {
       product.price >= min &&
       product.price <= max
   );
-  console.log(filteredProducts);
   return (
     <ShopLayout
       title={category}

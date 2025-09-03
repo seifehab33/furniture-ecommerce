@@ -8,7 +8,7 @@ interface CatMateState {
 function CatMat({ title, items }: CatMateState) {
   return (
     <div className="mt-10">
-      <h1 className="mb-4 font-bold">{title}</h1>
+      <h1 className="mb-4 font-bold text-[16px]">{title}</h1>
 
       <div className="space-y-3 rounded-lg">
         {items.map((item) => (
@@ -30,7 +30,7 @@ function CatMat({ title, items }: CatMateState) {
             </div>
 
             {/* Right side: counts */}
-            <div className="border px-2 py-0.5 rounded-full text-sm text-gray-500 transition-colors duration-150 ease-in-out group-hover:bg-[var(--theme-text-color)] group-hover:text-white">
+            <div className="border px-2 text-xs py-0.5 rounded-full  text-gray-500 transition-colors duration-150 ease-in-out group-hover:bg-[var(--theme-text-color)] group-hover:text-white">
               {item.counts}
             </div>
           </label>

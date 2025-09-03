@@ -22,14 +22,18 @@ export const allProducts = [
     price: 29.99,
     img: pro1,
     categoryId: "Beds",
+    material: "Cotton",
+    color: "Beige",
   },
   {
     id: 2,
-    title: "Product 3",
+    title: "Product 2",
     desc: "Category B",
     price: 39.99,
     img: pro2,
     categoryId: "Decor",
+    material: "Wool",
+    color: "Blue",
   },
   {
     id: 3,
@@ -38,6 +42,8 @@ export const allProducts = [
     price: 19.99,
     img: pro3,
     categoryId: "decor",
+    material: "Silk",
+    color: "Gray",
   },
   {
     id: 4,
@@ -46,6 +52,8 @@ export const allProducts = [
     price: 49.99,
     img: pro4,
     categoryId: "decor",
+    material: "Polyester",
+    color: "Green",
   },
   {
     id: 5,
@@ -54,6 +62,8 @@ export const allProducts = [
     price: 59.99,
     img: pro5,
     categoryId: "Decor",
+    material: "Leather",
+    color: "Red",
   },
   {
     id: 6,
@@ -62,6 +72,8 @@ export const allProducts = [
     price: 24.99,
     img: pro6,
     categoryId: "beds",
+    material: "Cotton",
+    color: "Yellow",
   },
   {
     id: 7,
@@ -70,6 +82,8 @@ export const allProducts = [
     price: 34.99,
     img: pro7,
     categoryId: "beds",
+    material: "Wool",
+    color: "Purple",
   },
   {
     id: 8,
@@ -78,6 +92,8 @@ export const allProducts = [
     price: 44.99,
     img: pro8,
     categoryId: "beds",
+    material: "Silk",
+    color: "Beige",
   },
   {
     id: 9,
@@ -86,6 +102,8 @@ export const allProducts = [
     price: 54.99,
     img: pro9,
     categoryId: "beds",
+    material: "Polyester",
+    color: "Gray",
   },
   {
     id: 10,
@@ -94,6 +112,8 @@ export const allProducts = [
     price: 64.99,
     img: pro10,
     categoryId: "Decor",
+    material: "Leather",
+    color: "Green",
   },
   {
     id: 11,
@@ -102,6 +122,8 @@ export const allProducts = [
     price: 74.99,
     img: pro11,
     categoryId: "Decor",
+    material: "Cotton",
+    color: "Blue",
   },
 ];
 
@@ -111,11 +133,13 @@ const Shop: React.FC = () => {
   // Get current values from URL with defaults
   const min = Number(searchParams.get("min")) || 0;
   const max = Number(searchParams.get("max")) || 2000;
-
+  const color = searchParams.get("color");
   // Filter products by price range
-  const filteredProducts = allProducts.filter(
-    (product) => product.price >= min && product.price <= max
-  );
+  const filteredProducts = allProducts.filter((product) => {
+    const matchesPrice = product.price >= min && product.price <= max;
+    const matchesColor = color ? product.color === color : true;
+    return matchesPrice && matchesColor;
+  });
 
   return (
     <ShopLayout

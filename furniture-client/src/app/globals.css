@@ -42,7 +42,7 @@
     --filter-title: 220 8% 20%;
     --filter-value: 220 8% 35%;
     --slider-track: 220 8% 92%;
-    --slider-range: 220 8% 15%;
+    --slider-range: 220 4% 15%;
     --slider-thumb: 0 0% 100%;
 
     --radius: 0.5rem;
@@ -129,4 +129,18 @@
 }
 input[type="checkbox"] {
   accent-color: var(--theme-text-color);
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px; /* 👈 control track height */
+  background: hsl(var(--slider-track));
+  border-radius: 9999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px; /* 👈 size of thumb */
+  width: 16px;
+  background: hsl(var(--slider-thumb));
+  border-radius: 50%;
+  margin-top: -6px; /* 👈 centers thumb relative to track height */
 }

@@ -90,6 +90,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
   const parts = pathName.split("/").filter(Boolean);
   const min = Number(searchParams.get("min")) || 0;
   const max = Number(searchParams.get("max")) || 2000;
+  const color = searchParams.get("color");
   const currentPage = Number(searchParams.get("page")) || 1;
   const [priceRange, setPriceRange] = useState<[number, number]>([min, max]);
   const totalResults = products.length;
@@ -110,10 +111,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
   };
 
   const resetFilter = () => {
-    const newParams = new URLSearchParams(searchParams.toString());
-    newParams.delete("min");
-    newParams.delete("max");
-    router.replace(`?${newParams.toString()}`, { scroll: false });
+    router.replace(`?`, { scroll: false });
     setPriceRange([defaultMin, defaultMax]);
   };
   const handlePageChange = (newPage: number) => {
@@ -129,7 +127,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
     e.preventDefault();
     if (currentPage > 1) handlePageChange(currentPage - 1);
   };
-  const isFiltered = min !== defaultMin || max !== defaultMax;
+  const isFiltered = min !== defaultMin || max !== defaultMax || color;
   return (
     <div className="">
       <div className="headerImg">
