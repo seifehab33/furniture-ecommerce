@@ -31,10 +31,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}  `}>
         <TooltipProvider>
-          <div className="z-50">
-            <Navbar />
-            <Header />
-          </div>
+          <Navbar />
+          <Header />
           <div className="bg-[#fbfcfc] min-h-screen pt-10 ">{children}</div>
           <Footer />
         </TooltipProvider>

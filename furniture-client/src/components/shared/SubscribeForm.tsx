@@ -1,8 +1,8 @@
 import React from "react";
 import subscribe from "@/assets/subscribe-section-image.webp";
 import Image from "next/image";
-import { Input } from "./input";
-import { Button } from "./button";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
 function SubscribeForm() {
   return (

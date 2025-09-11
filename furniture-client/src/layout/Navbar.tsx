@@ -27,7 +27,7 @@ import {
 
 import { Search } from "../components/ui/Search";
 import { CiMenuBurger } from "react-icons/ci";
-import { ShopDropdown } from "../components/ui/DropDownMenu";
+import { ShopDropdown } from "../components/shared/DropDownMenu";
 import Banner from "../components/ui/Banner";
 import Header from "./Header";
 const userItems = [

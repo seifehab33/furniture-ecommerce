@@ -1,4 +1,4 @@
-import SubscribeForm from "@/components/ui/SubscribeForm";
+import SubscribeForm from "@/components/shared/SubscribeForm";
 import Link from "next/link";
 import React from "react";
 import { FaBehanceSquare, FaFacebook, FaLinkedin } from "react-icons/fa";
