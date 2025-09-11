@@ -8,7 +8,7 @@ interface CatMateState {
 function CatMat({ title, items }: CatMateState) {
   return (
     <div className="mt-10">
-      <h1 className="mb-4 font-bold text-[16px]">{title}</h1>
+      <h1 className="mb-4 font-bold text-xs md:text-[16px]">{title}</h1>
 
       <div className="space-y-3 rounded-lg">
         {items.map((item) => (

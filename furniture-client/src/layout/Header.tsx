@@ -14,13 +14,38 @@ import {
 import { TbArmchair } from "react-icons/tb";
 
 export const headerItems = [
-  { id: 1, icon: <MdChairAlt />, title: "Chairs", href: "/chair" },
-  { id: 2, icon: <MdStorage />, title: "Storage", href: "/storage" },
-  { id: 3, icon: <TbArmchair />, title: "Armchairs", href: "/armchair" },
-  { id: 4, icon: <LuSofa />, title: "Sofas", href: "/sofas" },
-  { id: 5, icon: <MdBed />, title: "Beds", href: "/beds" },
-  { id: 6, icon: <MdTableBar />, title: "Tables", href: "/tables" },
-  { id: 7, icon: <FaGlassMartiniAlt />, title: "Decor", href: "/decor" },
+  {
+    id: 1,
+    icon: <MdChairAlt />,
+    title: "Chairs",
+    href: "/shop/category/chair",
+  },
+  {
+    id: 2,
+    icon: <MdStorage />,
+    title: "Storage",
+    href: "/shop/category/storage",
+  },
+  {
+    id: 3,
+    icon: <TbArmchair />,
+    title: "Armchairs",
+    href: "/shop/category/armchair",
+  },
+  { id: 4, icon: <LuSofa />, title: "Sofas", href: "/shop/category/sofas" },
+  { id: 5, icon: <MdBed />, title: "Beds", href: "/shop/category/beds" },
+  {
+    id: 6,
+    icon: <MdTableBar />,
+    title: "Tables",
+    href: "shop/category/tables",
+  },
+  {
+    id: 7,
+    icon: <FaGlassMartiniAlt />,
+    title: "Decor",
+    href: "/shop/category/decor",
+  },
 ];
 
 const locationsStyle =
@@ -51,7 +76,7 @@ function Header({ flexCol }: { flexCol?: boolean }) {
           {headerItems.map((item) => (
             <Link
               key={item.id}
-              href={item.href}
+              href={{ pathname: item.href }}
               className="flex items-center gap-2 text-sm hover:text-[var(--theme-text-color)]"
             >
               <span className="text-xl">{item.icon}</span>

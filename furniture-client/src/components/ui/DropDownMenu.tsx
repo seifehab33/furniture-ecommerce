@@ -33,13 +33,13 @@ export function ShopDropdown({
           return (
             <DropdownMenuItem key={c.title} asChild>
               <Link
-                href={c.href}
+                href={{ pathname: c.href }}
                 className={clsx(
                   "block w-full px-2 py-1 rounded-md transition-colors",
                   isActive && "text-[var(--theme-text-color)] font-medium"
                 )}
               >
-                {c.title}
+                {c.title}s
               </Link>
             </DropdownMenuItem>
           );

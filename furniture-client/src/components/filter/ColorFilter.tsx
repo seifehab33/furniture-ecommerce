@@ -25,7 +25,7 @@ function ColorFilter() {
 
   return (
     <div className="mt-10">
-      <h1 className="mb-4 font-bold text-[16px]">Filter by color</h1>
+      <h1 className="mb-4 font-bold text-xs md:text-[16px]">Filter by color</h1>
       <div className="space-y-3">
         {colors.map((c) => (
           <div

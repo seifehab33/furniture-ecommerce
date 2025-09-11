@@ -45,7 +45,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
 
   return (
     <div className="w-full bg-filter-background rounded-lg">
-      <h3 className="text-[16px] font-bold text-filter-title mb-6">
+      <h3 className="text-xs md:text-[16px] font-bold text-filter-title mb-6">
         Filter by price
       </h3>
 

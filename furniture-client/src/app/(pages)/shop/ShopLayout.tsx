@@ -142,7 +142,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
           <div className="absolute inset-0 rounded-3xl bg-black/50" />
 
           <div className="absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-gray-300">
-            <h1 className=" text-3xl font-bold">{title}</h1>
+            <h1 className=" text-3xl font-bold capitalize">{title}</h1>
             <div className="py-4 flex items-center">
               <Breadcrumb className="font-medium">
                 <BreadcrumbList>
@@ -166,7 +166,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
                     return (
                       <React.Fragment key={href}>
                         <BreadcrumbSeparator className="mt-1" />
-                        <BreadcrumbItem className="font-medium ">
+                        <BreadcrumbItem className="font-medium capitalize ">
                           {!isLast ? (
                             <BreadcrumbLink asChild>
                               <Link
@@ -192,16 +192,13 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
         </div>
       </div>
       <div className="custom-container mt-14 flex-col">
-        <div className="categories flex items-center gap-4 w-full justify-between">
+        <div className="categories grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6  gap-4 w-full justify-between">
           {categories.map((category) => (
-            <div
-              key={category.id}
-              className="flex items-center justify-between gap-4"
-            >
+            <div key={category.id} className="flex items-center gap-4">
               <div className="group w-16 h-16 rounded-full overflow-hidden">
                 <Link
                   href={{
-                    pathname: `/shop/category/${category.title}`,
+                    pathname: `/shop/category/${category.title.toLowerCase()}`,
                   }}
                 >
                   <Image
@@ -239,9 +236,9 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
             </div>
           </div>
           <div className="right-side flex-1">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row gap-2 lg:gap-0 items-center justify-between">
               <div className="flex items-center gap-3">
-                <p className="text-sm font-medium text-gray-500">
+                <p className="text-xs md:text-sm font-medium text-gray-500">
                   Showing {startResult} – {endResult} of {totalResults} results
                 </p>
                 {isFiltered && (
@@ -282,7 +279,7 @@ function ShopLayout({ title, headerImage, products }: ShopLayoutProps) {
             </div>
             {paginatedProducts.length > 0 ? (
               <>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
                   {paginatedProducts.map((product) => (
                     <ProductCard product={product} key={product.id} />
                   ))}

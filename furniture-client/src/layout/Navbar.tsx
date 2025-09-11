@@ -68,7 +68,7 @@ export function NavLink({
 
   return (
     <Link
-      href={href}
+      href={{ pathname: href }}
       className={clsx(
         " py-2 rounded-md transition-colors font-medium text-[16px] hover:text-[var(--theme-text-color)] duration-150 ease-in-out",
         isActive && " text-[var(--theme-text-color)] ",
@@ -91,7 +91,7 @@ function ListItem({
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link
-          href={href}
+          href={{ pathname: href }}
           className={clsx(
             "flex  px-3 py-4 text-nowrap transition-colors font-medium"
           )}

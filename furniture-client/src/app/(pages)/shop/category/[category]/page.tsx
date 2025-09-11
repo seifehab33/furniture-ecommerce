@@ -14,7 +14,7 @@ interface CatProps {
 
 const categoryImages: Record<string, string | StaticImageData> = {
   beds: sofas,
-  Decor: decor,
+  decor: decor,
 };
 
 const Page: React.FC<CatProps> = ({ params }) => {

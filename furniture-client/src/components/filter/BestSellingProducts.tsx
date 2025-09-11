@@ -22,7 +22,9 @@ const formatPrice = (price: number | undefined): string | number => {
 function BestSellingProducts() {
   return (
     <div className="mt-10">
-      <h1 className="font-bold text-[16px]">Best Selling Products</h1>
+      <h1 className="font-bold text-xs md:text-[16px]">
+        Best Selling Products
+      </h1>
       <div className="mt-4 flex flex-col gap-2">
         {products.map((product) => (
           <div key={product.id} className="flex items-center gap-4">
@@ -34,8 +36,8 @@ function BestSellingProducts() {
                 alt="Best Sell Product"
               />
             </div>
-            <div className="space-y-2">
-              <h1 className="font-bold">{product.title}</h1>
+            <div className="">
+              <h1 className="font-bold text-xs">{product.title}</h1>
               <p className="text-xs text-gray-500 font-medium">
                 <span>{formatPrice(product.price)}</span>{" "}
                 <span className="line-through ml-1 text-gray-400">

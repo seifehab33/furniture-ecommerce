@@ -53,33 +53,24 @@ export function NotFound() {
     router.back();
   };
   return (
-    <div className="h-screen w-full flex items-center justify-center  gap-10 px-4  md:px-20">
-      <div className="absolute hidden md:flex inset-0 items-center justify-center text-secondary py-24 px-20">
+    <div className="h-screen w-full flex items-center justify-center gap-10 px-4 md:px-20">
+      {/* decorative SVG — ignore pointer events so it doesn't block clicks */}
+      <div className="absolute hidden md:flex inset-0 items-center justify-center text-secondary py-24 px-20 pointer-events-none">
         {ICONS.notFound()}
       </div>
 
-      <div className="z-10 flex flex-col items-center mt-36 justify-center gap-8 md:gap-12">
+      {/* main content — ensure it's above the decorative layer */}
+      <div className="flex flex-col items-center justify-center gap-8 md:gap-12 relative z-10">
         <div className="flex flex-col items-center justify-center gap-4 md:gap-6">
           <h1 className="text-center text-4xl md:text-6xl font-semibold">
             We lost this page
           </h1>
           <p className="text-center text-lg md:text-xl">
-            The page you are looking for doesn&apos;t exist or has been moved.{" "}
+            The page you are looking for doesn&apos;t exist or has been moved.
           </p>
         </div>
-        <div className="flex gap-4 flex-col md:flex-row w-full items-center justify-center">
-          <div className="relative w-full md:w-fit">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
-            <Input
-              className="pl-8 bg-background w-full md:w-fit"
-              placeholder="Search our site"
-            />
-          </div>
-          <Button className="w-full md:w-fit" variant="outline">
-            Search
-          </Button>
-        </div>
-        <div className="flex gap-3 flex-col md:flex-row w-full items-center justify-center ">
+
+        <div className="flex gap-3 flex-col md:flex-row w-full items-center justify-center">
           <Button
             className="w-full md:w-fit"
             size={isMobile ? "default" : "lg"}

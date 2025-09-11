@@ -22,8 +22,8 @@ const brands = [
 function Brand() {
   return (
     <div className="mt-10">
-      <h1 className="mb-4 font-bold text-[16px]">Filter by brand</h1>
-      <div className="grid grid-cols-4 gap-4">
+      <h1 className="mb-4 font-bold text-xs md:text-[16px]">Filter by brand</h1>
+      <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-4">
         {brands.map((brand) => (
           <Tooltip key={brand.id}>
             <div className="flex items-center justify-center border  hover:border-[var(--theme-text-color)] transition">
@@ -31,7 +31,7 @@ function Brand() {
                 <Image
                   alt={`brand-${brand.tooltip}`}
                   src={brand.img}
-                  className="h-14 w-14 object-contain"
+                  className="h-14 w-14 object-contain "
                 />
               </TooltipTrigger>
               <TooltipContent className="bg-black text-white">
