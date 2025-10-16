@@ -38,7 +38,7 @@ export const headerItems = [
     id: 6,
     icon: <MdTableBar />,
     title: "Tables",
-    href: "shop/category/tables",
+    href: "/shop/category/tables",
   },
   {
     id: 7,

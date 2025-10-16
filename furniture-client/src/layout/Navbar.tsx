@@ -123,7 +123,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="sticky z-10 inset-0">
+    <div className="sticky z-50 inset-0">
       <Banner />
       <div
         ref={navRef}
